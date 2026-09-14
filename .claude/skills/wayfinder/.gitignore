@@ -1,0 +1,15 @@
+# Live business state. Sensitive: client invoices, contacts, recovery amounts.
+# The directory structure is tracked; contents are not.
+state/**/*.json
+state/audit/*.ndjson
+state/digest/*.md
+state/outbox/*
+state/.idem/*
+state/KILL
+
+# Keep the tree so a fresh clone can run.
+!state/**/.gitkeep
+
+# Python
+__pycache__/
+*.pyc

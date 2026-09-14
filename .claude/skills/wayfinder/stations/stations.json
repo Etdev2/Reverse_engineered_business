@@ -1,0 +1,31 @@
+{
+  "registry_version": "1.0",
+  "charter": "demurrage-detective",
+  "stations": [
+    {"id": 1,  "slug": "charter",            "name": "Charter & Constraints",                     "owner": "charter-clerk",        "tier": "opus",   "deps": [],           "cadence": "once",       "produces": "charter",     "gate": null},
+    {"id": 2,  "slug": "market",             "name": "Market & Demand Intake",                    "owner": "demand-analyst",       "tier": "opus",   "deps": [1],          "cadence": "cycle",      "produces": "gono",        "gate": null},
+    {"id": 3,  "slug": "compliance",         "name": "Entity, Compliance & Insurance",            "owner": "compliance-counsel",   "tier": "opus",   "deps": [1],          "cadence": "once",       "produces": "filings",     "gate": "approval"},
+    {"id": 4,  "slug": "economics",          "name": "Offer Definition & Unit Economics",         "owner": "economics-modeler",    "tier": "opus",   "deps": [2],          "cadence": "cycle",      "produces": "offer",       "gate": null},
+    {"id": 5,  "slug": "input-supply",       "name": "Input Supply & Capacity",                   "owner": "supply-capacity-planner","tier": "sonnet","deps": [4],          "cadence": "cycle",      "produces": "suppliers",   "gate": null},
+    {"id": 6,  "slug": "MERGED",             "name": "Capacity & Logistics Plan (merged into 5)", "owner": null,                   "tier": null,     "deps": [],           "cadence": "merged",     "produces": null,          "gate": null},
+    {"id": 7,  "slug": "brand",              "name": "Brand & Asset Production",                  "owner": "copywriter",           "tier": "sonnet", "deps": [4],          "cadence": "once",       "produces": "assets",      "gate": null},
+    {"id": 8,  "slug": "demand-gen",         "name": "Channel & Demand Generation",               "owner": "outbound-operator",    "tier": "haiku",  "deps": [7, 2],       "cadence": "continuous", "produces": "leads",       "gate": null},
+    {"id": 9,  "slug": "qualification",      "name": "Lead Qualification & Routing",              "owner": "qualifier",            "tier": "sonnet", "deps": [8],          "cadence": "per-entity", "produces": "calls",       "gate": "call"},
+    {"id": 10, "slug": "deal",               "name": "Quote, Proposal & Contract",                "owner": "deal-desk",            "tier": "opus",   "deps": [9, 4, 3],    "cadence": "per-entity", "produces": "quotes",      "gate": "approval"},
+    {"id": 11, "slug": "intake",             "name": "Engagement Intake & Document Requisition",  "owner": "intake-coordinator",   "tier": "haiku",  "deps": [10],         "cadence": "per-entity", "produces": "engagements", "gate": null},
+    {"id": 12, "slug": "audit-production",   "name": "Audit Production & Dispute Assembly",       "owner": "audit-engine",         "tier": "sonnet", "deps": [11, 5],      "cadence": "per-entity", "produces": "findings",    "gate": null},
+    {"id": 13, "slug": "dispute-filing",     "name": "Dispute Filing & Carrier Credit Confirmation","owner": "dispute-handler",    "tier": "opus",   "deps": [12],         "cadence": "per-entity", "produces": "disputes",    "gate": "approval"},
+    {"id": 14, "slug": "invoicing",          "name": "Invoicing & Cash Collection",               "owner": "collections",          "tier": "haiku",  "deps": [13],         "cadence": "per-entity", "produces": "invoices",    "gate": null},
+    {"id": 15, "slug": "support",            "name": "Client Support & Finding Disputes",         "owner": "support-triage",       "tier": "sonnet", "deps": [13],         "cadence": "continuous", "produces": "tickets",     "gate": null},
+    {"id": 16, "slug": "books",              "name": "Books, Tax Pack & Reporting",               "owner": "bookkeeper",           "tier": "sonnet", "deps": [14],         "cadence": "continuous", "produces": "reports",     "gate": null},
+    {"id": 17, "slug": "retention",          "name": "Retention, Re-Audit & Referral",            "owner": "retention",            "tier": "haiku",  "deps": [14],         "cadence": "cycle",      "produces": "leads",       "gate": null},
+    {"id": 18, "slug": "retro",              "name": "Retro & Reallocation",                      "owner": "retro-analyst",        "tier": "opus",   "deps": [16],         "cadence": "cycle",      "produces": "retro",       "gate": null}
+  ],
+  "crosscutting": [
+    {"slug": "dispatcher", "name": "Dispatcher",       "tier": "sonnet"},
+    {"slug": "reviewer",   "name": "Reviewer / Red Team","tier": "opus"},
+    {"slug": "ledger",     "name": "Ledger",           "tier": "deterministic"},
+    {"slug": "watchdog",   "name": "Watchdog",         "tier": "deterministic"},
+    {"slug": "scribe",     "name": "Scribe",           "tier": "deterministic"}
+  ]
+}

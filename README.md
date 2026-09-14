@@ -23,7 +23,7 @@ a background in ocean freight forwarding, customs brokerage, and port drayage.
 | **Survived Phase 4 debate** | 2 |
 | **Selected to test first** | **The Demurrage Detective** — contingency-based ocean invoice audit |
 | **Market evidence gathered** | **None.** Every score below 8 today is a guess. |
-| **Code** | None yet, and none is needed for the first test |
+| **Code** | `wayfinder` skill — runs the Demurrage Detective as an agent swarm |
 | **Evidence entries logged** | 0 — see [`docs/EVIDENCE_LOG.md`](docs/EVIDENCE_LOG.md) |
 
 > Nothing in this repo is validated. The documents are a ranked list of guesses plus the
@@ -34,13 +34,19 @@ a background in ocean freight forwarding, customs brokerage, and port drayage.
 ```
 .
 ├── README.md                            # you are here — what this repo is and its state
-└── docs/
-    ├── REVERSE_ENGINEERED_IDEATION.md   # the full Phase 0-5 record for the logistics run
-    └── EVIDENCE_LOG.md                  # test results — the only file holding facts
+├── docs/
+│   ├── REVERSE_ENGINEERED_IDEATION.md   # the full Phase 0-5 record for the logistics run
+│   └── EVIDENCE_LOG.md                  # test results — the only file holding facts
+└── .claude/skills/wayfinder/            # the machine that runs the surviving candidate
+    ├── SKILL.md                         # triggers on "run the business", "what's blocked"
+    ├── charters/                        # the live business definition
+    ├── stations/                        # 18 station playbooks (6 merged into 5)
+    ├── agents/                          # 22 specialist + cross-cutting agent specs
+    └── bin/wf.py                        # Ledger, Dispatcher, Watchdog, Scribe
 ```
 
-Everything is Markdown. There is no build, no dependencies, and no toolchain — the only thing
-worth adding before the Phase 5 tests run is evidence.
+The docs are Markdown with no toolchain. The skill has a small dependency-free Python runtime
+(`python3 bin/dryrun.py` walks a synthetic engagement from Station 1 to 18).
 
 ## The method in six phases
 
@@ -90,7 +96,8 @@ the two falsification tests are at the end; the scoring table in Phase 3 is the 
 
 **Running the next step:** execute Test A (the Demurrage Detective audit) exactly as written —
 including the STOP result. The point of a pre-committed STOP is that it binds when the outcome
-is disappointing.
+is disappointing. The `wayfinder` skill runs it: `python3 .claude/skills/wayfinder/bin/wf.py queue`
+shows the only thing you have to look at, and its charter encodes the same STOP condition.
 
 **Recording what comes back:** log it in [`docs/EVIDENCE_LOG.md`](docs/EVIDENCE_LOG.md), which
 is the only file in the repo permitted to change SCORE-TODAY. Raw outcome first — the number of

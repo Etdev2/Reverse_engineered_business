@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Handoff Envelope",
+  "description": "Every inter-agent message carries this. Enforced by validate_envelope() in bin/wf.py — an envelope that fails is refused and logged, never partially applied.",
+  "type": "object",
+  "required": ["envelope_version","run_id","station","agent","entity_type","entity_id","action","payload","provenance","confidence","timestamp"],
+  "additionalProperties": false,
+  "properties": {
+    "envelope_version": {"const": "1.0"},
+    "run_id":      {"type": "string", "pattern": "^run_[a-z0-9_]+$"},
+    "station":     {"type": "integer", "minimum": 1, "maximum": 18},
+    "agent":       {"type": "string", "description": "slug from agents/, must match the station owner in stations.json"},
+    "entity_type": {"enum": ["runs","leads","quotes","engagements","suppliers","invoices","findings","disputes","calls","approvals","outbox"]},
+    "entity_id":   {"type": "string", "pattern": "^[A-Z]{3,4}-\\d{4}$|^run_[a-z0-9]+$"},
+    "action":      {"type": "string", "description": "verb_noun. Substring-matched against GATED_ACTIONS — an action containing pay/sign/publish/file_gov/commit_spend/file_dispute_as_client gates automatically."},
+    "idempotency_key": {"type": "string", "description": "Optional. Omitted means derived from station+entity+action+payload digest. Supply explicitly when the same logical action could be composed from differing payloads (e.g. a retry with a corrected typo that must NOT re-send)."},
+    "payload":     {"type": "object", "description": "Merged into the entity file on commit. Shape is governed by the station's output contract."},
+    "provenance": {
+      "type": "object",
+      "required": ["derived_from","method"],
+      "properties": {
+        "derived_from": {"type": "array", "items": {"type": "string"}, "description": "Entity ids, file paths, call ids, or URLs. A number with no source here is a refusal, not a guess."},
+        "method": {"type": "string", "description": "How it was derived: parsed|computed|quoted|inferred|human-debrief"}
+      }
+    },
+    "confidence":  {"type": "number", "minimum": 0.0, "maximum": 1.0, "description": "Below 0.6 on a money or external-facing figure must escalate rather than commit."},
+    "requires":    {"enum": [null, "approval", "call"], "description": "Agent-declared gate. The runtime also gates independently on action name — an agent cannot opt out by omitting this."},
+    "timestamp":   {"type": "string", "format": "date-time"}
+  }
+}
