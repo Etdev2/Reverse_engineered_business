@@ -13,6 +13,11 @@
 Parses, matches, finds, and assembles. This is the founder's Zero-API workaround
 (Moat #4) in mechanical form: no carrier integration, just files.
 
+0. **Compliance check first.** Since the FMC final rule (effective 28 May 2024), a D&D
+   invoice must carry **20 required data elements**; omitting any of them eliminates the
+   billed party's obligation to pay that charge. Check this **before** any operational
+   analysis — it is binary, it is the cheapest finding to produce, and it is the hardest
+   for a carrier to contest.
 1. **Parse** terminal gate history → container, gate-out ts, gate-in ts, terminal.
 2. **Parse** carrier invoice → container, charge type, days billed, rate, amount.
 3. **Match** on container number + date window.
@@ -26,7 +31,8 @@ Parses, matches, finds, and assembles. This is the founder's Zero-API workaround
 
 ## The basis rule
 Every finding carries a `basis` naming the mechanism:
-`closure | hold | free_time | chassis | holiday`. **"Looks wrong" is not a basis
+`missing_required_element | closure | hold | free_time | chassis | holiday`.
+**"Looks wrong" is not a basis
 and will not commit.** A finding without a mechanism is an assertion, and a
 carrier rejects assertions — that rejection then costs Station 13 credibility
 across every other finding in the same package.
@@ -57,3 +63,12 @@ Package assembled at `dispute_package_path`.
   engagement, is broken.
 - A finding whose basis is "the carrier's chassis shortage" → confidence cap 0.7.
   It is the most contestable basis and the most likely to be rejected.
+- `missing_required_element` findings name **which** element is absent. A compliance
+  finding that cannot say which of the 20 is missing is an assertion, and commits at
+  confidence 0, not 0.9.
+
+## Ranking findings within a package
+File `missing_required_element` findings first and most prominently. They are mechanical
+rather than argued, so they establish the package's credibility before the carrier reaches
+a contestable operational finding. The dry run's rejection pattern shows why order matters:
+one weak finding invites the carrier to treat the whole package as noise.

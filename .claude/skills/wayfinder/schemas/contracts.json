@@ -27,7 +27,7 @@
            "out": {"required": ["engagement_id","documents_requested","documents_received","acknowledged_at","expected_turnaround_days"]}},
     "12": {"in": {"engagement": "entity:engagements", "capacity": "ref:5"},
            "out": {"required": ["containers_reviewed","discrepancies","amount_at_issue_usd","basis_per_finding","dispute_package_path","confidence"],
-                   "note": "basis_per_finding must name the mechanism per finding: closure|hold|free_time|chassis|holiday. 'looks wrong' is not a basis."}},
+                   "note": "basis_per_finding must name the mechanism per finding: missing_required_element|closure|hold|free_time|chassis|holiday. Check missing_required_element FIRST (FMC final rule eff. 2024-05-28: 20 required invoice data elements; omission eliminates the obligation to pay) - it is binary and hardest to contest. 'looks wrong' is not a basis."}},
     "13": {"in": {"findings": "entity:findings"},
            "out": {"required": ["filed_by","filed_at","carrier","amount_claimed_usd","carrier_response","days_to_response","amount_recovered_usd","evidence_log_row"],
                    "note": "filed_by is client|third_party — THE unresolved variable. Every outcome writes to EVIDENCE_LOG.md A4."}},

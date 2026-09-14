@@ -66,6 +66,22 @@ human or a later adapter to send. No credentials exist anywhere in this system.
   outcomes, §A5 for verbatim buyer answers. Station 13 writes there on every
   filing. Station 18 revises SCORE-TODAY from it.
 
+## Regulatory basis (verified 2026-09-14)
+The FMC final rule on Demurrage and Detention Billing Requirements (Docket 22-04,
+effective **28 May 2024**) requires **20 data elements** on a D&D invoice; omitting any
+of them **eliminates the billed party's obligation to pay** that charge. It also sets a
+"30/30/30" structure — 30 days to invoice, ≥30 days for the billed party to request
+mitigation, and a **mandated resolution attempt within 30 days**. Where an NVOCC is both
+billing and billed party (which most target forwarders are), it may pass a dispute
+through on behalf of its own billed party.
+
+Two caveats, both binding on Station 3 and Station 13:
+- In **September 2025** the D.C. Circuit (*World Shipping Council v. FMC*) held the
+  Commission inadequately justified the restriction on **which party** may be billed.
+  Billing-party assignment is contractual again, not guaranteed.
+- **Verify current rule status with counsel before relying on any of this in client-facing
+  copy or a filed dispute.** Station 7 may not state it as settled law.
+
 ## The STOP condition
 Pre-committed, and it binds. From Phase 5:
 

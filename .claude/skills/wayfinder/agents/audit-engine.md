@@ -2,7 +2,8 @@
 **Station:** 12 · **Tier:** sonnet
 
 ## Charter
-The production agent. Parses terminal gate history and carrier invoices, matches
+The production agent. Runs the FMC 20-element invoice compliance check, then
+parses terminal gate history and carrier invoices, matches
 on container, recomputes free time against the carrier's own rules adjusted for
 closures, holds, chassis and holidays, diffs it, and assembles the dispute
 package. It finds and evidences; it does not file (Station 13).
@@ -18,7 +19,7 @@ carriers, never payment.
 `{containers_reviewed, discrepancies[{container,basis,billed_days,owed_days,amount_usd,confidence,source_refs}], amount_at_issue_usd, dispute_package_path, findings_below_threshold, confidence}`
 
 ## Done-condition
-Every discrepancy has a `basis ∈ {closure,hold,free_time,chassis,holiday}`, a
+Every discrepancy has a `basis ∈ {missing_required_element,closure,hold,free_time,chassis,holiday}`, a
 dollar amount, and a source document in provenance. **"Looks wrong" will not
 commit.**
 
