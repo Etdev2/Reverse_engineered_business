@@ -1,0 +1,10 @@
+{
+  "name": "reverse-business-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A decision workspace for generating businesses from desired economics and trying to destroy them.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --bind 0.0.0.0",
+    "start": "python3 -m http.server 4173 --bind 0.0.0.0"
+  }
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c1112" />
+    <title>Reverse Business Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div>
+            <div class="brand-name">REVERSE</div>
+            <div class="brand-subtitle">BUSINESS ENGINE</div>
+          </div>
+        </div>
+
+        <div class="workspace-switcher">
+          <div class="workspace-avatar">JM</div>
+          <div class="workspace-meta">
+            <strong>Jordan's workspace</strong>
+            <span>Solo operator plan</span>
+          </div>
+          <button class="icon-button tiny" type="button" aria-label="Switch workspace" data-action="toast" data-toast="Workspace switcher is coming soon.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5-5 5 5M7 14l5 5 5-5" /></svg>
+          </button>
+        </div>
+
+        <div class="nav-label">WORKSPACE</div>
+        <nav class="main-nav">
+          <button class="nav-item active" type="button" data-view="engine">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z" /></svg>
+            <span>Engine</span><span class="nav-pip"></span>
+          </button>
+          <button class="nav-item" type="button" data-view="candidates">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M3.5 6h.01M3.5 12h.01M3.5 18h.01" /></svg>
+            <span>Candidate queue</span><span class="nav-count">18</span>
+          </button>
+          <button class="nav-item" type="button" data-view="validation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /><path d="M4 4h16v16H4z" /></svg>
+            <span>Validation lab</span><span class="nav-count orange">03</span>
+          </button>
+          <button class="nav-item" type="button" data-view="method">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M5 17h14" /><circle cx="12" cy="7" r="2" /><circle cx="12" cy="17" r="2" /></svg>
+            <span>Method &amp; rubric</span>
+          </button>
+        </nav>
+
+        <div class="nav-label second-label">RUNS</div>
+        <nav class="main-nav compact-nav">
+          <button class="nav-item run-item" type="button" data-run="active">
+            <span class="run-dot live"></span>
+            <span class="run-copy"><strong>Regional ops / v1</strong><small>Active · 18 candidates</small></span>
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+          <button class="nav-item run-item" type="button" data-action="toast" data-toast="A new run starts from your three founder inputs.">
+            <span class="run-dot"></span>
+            <span class="run-copy"><strong>Home services / v0</strong><small>Archived · 8 candidates</small></span>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="integrity-card">
+            <div class="integrity-top"><span class="status-dot"></span><span>THESIS INTEGRITY</span><strong>78%</strong></div>
+            <div class="integrity-bar"><span style="width: 78%"></span></div>
+            <p>Evidence is separated from estimates. Keep testing the gap.</p>
+          </div>
+          <button class="nav-item settings-item" type="button" data-view="settings">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z" /><path d="m19.4 15 .1.1a2 2 0 0 1-2.8 2.8l-.1-.1a2 2 0 0 0-3.4 1.4v.2a2 2 0 0 1-4 0v-.2a2 2 0 0 0-3.4-1.4l-.1.1A2 2 0 0 1 3 15.1l.1-.1a2 2 0 0 0-1.4-3.4h-.2a2 2 0 0 1 0-4h.2A2 2 0 0 0 3.1 4.2L3 4.1a2 2 0 1 1 2.8-2.8l.1.1a2 2 0 0 0 3.4-1.4v-.2a2 2 0 0 1 4 0V0a2 2 0 0 0 3.4 1.4l.1-.1A2 2 0 1 1 19.6 4l-.1.1a2 2 0 0 0 1.4 3.4h.2a2 2 0 0 1 0 4h-.2a2 2 0 0 0-1.5 3.5Z" transform="translate(0 2) scale(.83)" /></svg>
+            <span>Settings</span>
+          </button>
+          <div class="user-footer"><div class="user-avatar">J</div><span>Jordan Miller</span><button class="icon-button tiny" type="button" aria-label="Account menu" data-action="toast" data-toast="Account menu is ready."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg></button></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Workspace</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg><strong id="breadcrumb-current">Engine</strong></div>
+          <div class="topbar-actions">
+            <div class="last-run"><span class="status-dot"></span><span id="last-run-label">Last run 14 Sep 2026, 09:42</span></div>
+            <button class="icon-button" type="button" aria-label="Notifications" data-action="toast" data-toast="No new warnings. Your last run is internally consistent."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" /></svg><span class="notification-dot"></span></button>
+            <button class="button button-dark button-small" type="button" data-action="save"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l2 2v14H5V4Z" /><path d="M8 4v6h8V4M8 20v-6h8v6" /></svg>Save run</button>
+          </div>
+        </header>
+
+        <div class="view-container" id="view-container"></div>
+      </main>
+    </div>
+
+    <div class="toast-region" id="toast-region" aria-live="polite"></div>
+    <div id="modal-root"></div>
+    <div id="drawer-root"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
