@@ -1,0 +1,6 @@
+invoice_id,carrier,container_number,charge_type,free_time_days,daily_rate,billed_chargeable_days,billed_amount,invoice_date
+INV-1001,MAERSK,MSCU1000017,detention,5,180,2,360,2026-09-10
+INV-1002,MSC,TGHU2000028,detention,5,200,6,1200,2026-09-15
+INV-1003,CMA CGM,MEDU3000033,demurrage,4,150,3,450,2026-09-12
+INV-1004,MAERSK,CSQU4000041,detention,4,175,4,700,2026-09-14
+INV-1005,ONE,BMOU5000052,detention,5,190,5,950,2026-09-16
