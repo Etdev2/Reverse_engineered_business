@@ -26,6 +26,20 @@ Live charter. Binding on every station. Derived from
 - **Risk tolerance:** Low on anything irreversible or regulatory. High on outbound
   volume — a cold email that fails costs nothing.
 
+## Scaling gate (hiring)
+Hiring is permitted by the founder but **gated by the charter**. No hire is committed
+until all four hold, and a hire proposal that clears fewer is a Station 10/18 refusal,
+not an approval ticket:
+1. Phase 4 cleared — ≥4 retained clients, realised contingency ≥20%, ≤6 hrs/audit.
+2. ≥3 carrier credits confirmed **and collected**.
+3. Working capital ≥6 months of the hire's fully-loaded cost, held separately and not
+   counted against recoveries in flight.
+4. Churn measured over ≥9 months, below 50% annualised.
+
+Reason: this business bills 75–120 days after the labour is incurred. Hiring against
+unvalidated unit economics on that cycle is now the single most likely failure mode.
+First hire is an offshore audit analyst, never a salesperson — sell solo to ~40 clients.
+
 ## Will not do
 Hard refusals. No approval ticket clears these.
 - **Issue a customs classification opinion or recommend an HTS code.** No broker
@@ -34,8 +48,8 @@ Hard refusals. No approval ticket clears these.
   or reviewing a customs entry for filing.
 - Cold door-knocking or street sales.
 - Native mobile app development.
-- Managing offshore software agencies. (An offshore *operations assistant* for
-  audit data entry is in scope — Specialist 18.4. An agency of developers is not.)
+- ~~Managing offshore software agencies~~ — **lifted 2026-09-14.** Hiring and skill
+  acquisition are unconstrained; the scaling gate above governs *when*, not *whether*.
 
 ## Unit economics floor
 - **Contingency rate:** 25% target, **20% floor.** Below 20% we decline.

@@ -791,3 +791,214 @@ outcome, not a rare one.
   only asset in this business that a better-funded competitor cannot simply build. If it
   is deliberately constructed from engagement one, the PRECISION scenario's probability
   is meaningfully higher than the 7% assigned.
+
+---
+
+# 23. ADDENDUM — Re-evaluation with the hiring and skilling constraints lifted
+
+**Change to Phase 0:** the charter no longer forbids hiring, and the founder will
+acquire skills without constraint (so "no offshore agencies," "no mobile apps," and the
+solo-executable skill list all fall away).
+
+**What did *not* change and must be stated:** the **$5,000 capital** limit and the
+**15 hrs/week** limit were not lifted. That distinction turns out to matter more than
+the hiring permission itself, so both readings are modelled below.
+
+---
+
+## 23.1 The finding that reframes the question
+
+**Hiring was never the binding constraint. Working capital was.**
+
+This business has a structurally hostile cash conversion cycle:
+
+| Event | Timing |
+|---|---|
+| Audit performed (labour incurred) | Day 0 |
+| Dispute filed | Day 5–15 |
+| Carrier resolution window (FMC-mandated attempt) | +30 days |
+| Credit issued and confirmed | Day 45–90 |
+| Client invoiced (Station 14 trigger: `credit_confirmed`) | Day 45–90 |
+| Client pays | Day 75–120 |
+
+**Payroll is monthly. Revenue is 75–120 days out, and only on approved claims.** Every
+hire is therefore a 4–6 month negative-cash bet placed *before* knowing whether that
+person's work will convert. An employee costing $2,000/month needs roughly **$10–12K of
+working capital** before their first dollar returns.
+
+$5,000 funds **less than half of one offshore analyst** through a single cash cycle.
+
+**Conclusion: lifting the hiring ban while holding capital at $5,000 changes the ceiling
+by very little.** The permission is real; the means are not.
+
+---
+
+## 23.2 Three models compared
+
+| | **Constrained** (original, yr 3) | **A — hire, capital still $5K** (yr 5) | **B — hire + capital access** (yr 5) |
+|---|---|---|---|
+| EV revenue | $223K | **$315K** | **$1,116K** |
+| EV profit | $118K | **$133K** | **$211K** |
+| **EV equity** | **$416K** | **$544K** | **$1,670K** |
+| Capital at risk | $5K | $5K | **$300K** |
+| Founder hrs/yr | 780 | 1,560 | **2,600** |
+| **EV profit / founder hour** | **$151** | **$85** | **$81** |
+| **Return on capital** | **~2,360%** | ~2,660% | **~70%** |
+| P(failure) | 38% | 40% | **42%** |
+| P(>$1M revenue) | 9% | 17% | **38%** |
+| P(worth $10M+) | 2% | 3% | **9%** |
+
+### Reading the table
+
+- **Model A adds ~$128K of EV equity for double the hours.** Growth funded only from
+  retained earnings compounds slowly against a 75–120 day cycle; by year five it has
+  bought roughly two analysts. The hiring permission alone is worth little.
+- **Model B roughly quadruples EV equity** ($416K → $1.67M) and raises P(>$1M revenue)
+  from 9% to 38%. That is a genuine, material change in the size of the prize.
+- **But EV profit rises only 1.8×** ($118K → $211K) on 3.3× the hours and 60× the capital.
+
+**The two numbers that fall are the ones the original analysis scored highest:**
+
+> **Profit per founder hour: $151 → $81.**
+> **Return on capital: ~2,360% → ~70%.**
+
+Capital Efficiency drops from **10/10 to 5/10**, and Founder Leverage from **6/10 to
+4/10** — because the founder is now managing people rather than compounding output.
+
+---
+
+## 23.3 Why the margin compresses
+
+The naive model says: more hands, more audits, same 65–75% margin. It does not hold.
+
+**Revenue per head in freight audit/recovery lands at $150–220K**, and the mix is the
+problem. Reaching ~$1.8M (≈140 clients at $13K) requires roughly:
+
+| Role | Heads | Loaded cost | Note |
+|---|---|---|---|
+| Offshore audit analysts | 4 | $100K | Cheap, scalable, genuinely automatable |
+| **Carrier follow-through / account mgmt** | **2** | **$130K** | The cost BULL conceded in Phase 4. *Not* offshore-friendly — it is relationship work on a clock |
+| **US sales** | **2** | **$300K** | The real constraint. SMB sales at $13K ARPU is expensive |
+| Founder + admin + legal + E&O | — | $220K | |
+| Tooling, infra, G&A | — | $110K | |
+| **Total cost** | **8** | **~$860K** | |
+
+**$1.8M revenue − $860K ≈ $940K gross, less management drag, bad debt and unrecovered
+work → EBITDA ~20–25%, or $360–450K.**
+
+Net margin falls from **~65% (solo SDE) to ~22% (agency)**. You keep a quarter of each
+new dollar instead of two-thirds. That is why 13× the revenue produces under 4× the profit.
+
+**The single worst line is US sales.** At $13K ARPU, acquiring an SMB forwarder costs
+$3,500–5,000 in loaded sales time. It works (LTV:CAC ≈ 5–6:1) but it consumes ~23% of
+revenue permanently, and it is the line the solo founder was getting for free.
+
+---
+
+## 23.4 What actually breaks now — the ceiling moves, and so does the wall
+
+The original §10 said founder hours break at ~10 clients. With hiring, that wall moves
+and **three new ones appear in front of the old ceiling**:
+
+| Threshold | What breaks | Severity |
+|---|---|---|
+| **~15 clients** | **Working capital.** First hire must be funded ~5 months ahead of their revenue | **The first hard wall.** Capital, not people |
+| **~40 clients** | **Sales throughput.** Founder can no longer both sell and run delivery; needs a salesperson who does *not* have the domain vernacular that closed the first 20 | High — this is where conversion rates drop |
+| **~100 clients** | **Moat erosion.** Revenue crosses ~$1.3M, which is exactly where funded competitors start finding these contracts attractive. You leave the protected niche at the moment you become worth attacking | **Critical — and structural** |
+| ~250 clients | Ruleset maintenance across carriers/contracts needs real engineering, not scripts | Medium — and now solvable, since skilling is unconstrained |
+| $5M+ | Requires modal or geographic expansion (air, LTL, EU/Asia). The FMC rule that *is* the product does not travel | High — a different company |
+
+### The moat point is the one to sit with
+
+The original Moat score of 4/10 rested on a specific protection: **segment economics.**
+A funded competitor will not chase $13K/yr contracts because the sales motion does not
+pay for itself at their cost structure. That protection is *created by staying small*.
+
+Scaling to $1.8M does not strengthen the moat — **it spends it.** You arrive in the
+revenue band where competitors want to compete, having replaced your differentiator (a
+founder who sounds like a forwarder) with salespeople who do not.
+
+**Moat score at scale: 4/10 → 3/10.** This is the most counterintuitive result in the
+addendum, and the most important.
+
+---
+
+## 23.5 What genuinely improves
+
+Not everything degrades. Three things get materially better:
+
+1. **The PRECISION scenario becomes real.** Unconstrained skilling means the founder can
+   build the compliance-ruleset product rather than aspire to it. P(worth $10M+) rises
+   **2% → 9%**, and this is the honest upside of the change. The 20-element check
+   (Finding 1) is exactly the kind of mechanical, licensable logic that supports a
+   software multiple (2–3× revenue) rather than a services multiple (4–5× EBITDA).
+2. **Key-person risk falls** from Critical to High. A trained team is a partial answer to
+   the original §12's worst-scored risk.
+3. **The capacity wall stops being the story.** Under the original charter, the business
+   was *guaranteed* to stall near $250K. Now it can fail for commercial reasons instead
+   of arithmetic ones — which is a better class of problem.
+
+---
+
+## 23.6 The sequencing answer
+
+**Hiring is a real option, not a decision.** It costs nothing to hold and it should be
+exercised late.
+
+- **Nothing about the first 120 hours changes.** Phases 1–3 of §18 are identical. You
+  cannot hire your way to an answer on whether carriers pay.
+- **The option is worth ~$1.25M of EV** (the B-minus-constrained gap) and it does not
+  expire. Holding it costs nothing.
+- **Exercising it early is now the single most likely way to fail.** Under the old
+  charter, the dominant failure mode was *never finding demand*. Under the new one it is
+  **hiring against unvalidated unit economics in a business with a 90-day cash cycle** —
+  the classic way service firms die, and it was previously impossible.
+
+### Revised gate: do not hire before all four hold
+
+1. **Phase 4 cleared** — ≥4 retained clients, realised contingency ≥20%, ≤6 hrs/audit.
+2. **≥3 carrier credits confirmed and collected** — the load-bearing assumption is
+   answered with cash, not a promise.
+3. **Working capital ≥ 6 months of the hire's fully-loaded cost**, held separately and
+   not counted against recoveries in flight.
+4. **Churn measured over ≥9 months, below 50% annualised.** Hiring into a leaky bucket
+   converts a profitable small business into an unprofitable larger one.
+
+**First hire should be an offshore audit analyst, never a salesperson.** The analyst
+relieves the capacity wall at ~$115/hr of freed founder time; the salesperson costs
+$140K and dilutes the only differentiator you have. Sell yourself until roughly 40
+clients, and only then buy sales capacity.
+
+---
+
+## 23.7 Revised verdict
+
+| Metric | Constrained | **Unconstrained (Model B)** |
+|---|---|---|
+| Overall Business Potential (bootstrap weights) | 7.0/10 | **6.4/10** |
+| Overall Business Potential (venture weights) | 4.5/10 | **6.0/10** |
+| Capital Efficiency | 10/10 | **5/10** |
+| Founder Leverage | 6/10 | **4/10** |
+| Scalability | 5/10 | **7/10** |
+| Moat | 4/10 | **3/10** |
+| Risk | 6/10 | **7/10** |
+| **Recommendation** | **3 — Validate cheaply** | **3 — Validate cheaply** |
+
+**The recommendation does not change, and that is the finding.**
+
+Lifting the constraint raises the *ceiling* and lowers the *efficiency*. It converts an
+exceptional return on a small bet into a good return on a large one. Those two scores
+move in opposite directions and roughly cancel — which is why the overall number barely
+shifts while both underlying businesses become quite different things.
+
+**The decision the constraint change actually forces is not "should I validate" — it is
+"which business am I trying to own?"**
+
+- **A $150–250K/yr practice** you run in spare hours, keeping ~65 cents per dollar, with
+  near-infinite return on capital and a moat that exists *because* you stayed small.
+- **A $2M/yr firm** worth $1.5–3M on exit, keeping ~22 cents per dollar, requiring
+  ~$300K and a full working week, in a segment you have by then made worth attacking.
+
+Both are legitimate. The second is worth about 4× the first in equity and about half as
+much per hour of your life. **Neither choice has to be made until after Phase 4** — and
+making it earlier is strictly worse in both directions.
