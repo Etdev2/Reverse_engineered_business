@@ -24,6 +24,7 @@ a background in ocean freight forwarding, customs brokerage, and port drayage.
 | **Selected to test first** | **The Demurrage Detective** — contingency-based ocean invoice audit |
 | **Market evidence gathered** | **None.** Every score below 8 today is a guess. |
 | **Code** | None yet, and none is needed for the first test |
+| **Evidence entries logged** | 0 — see [`docs/EVIDENCE_LOG.md`](docs/EVIDENCE_LOG.md) |
 
 > Nothing in this repo is validated. The documents are a ranked list of guesses plus the
 > experiments that would kill them.
@@ -34,7 +35,8 @@ a background in ocean freight forwarding, customs brokerage, and port drayage.
 .
 ├── README.md                            # you are here — what this repo is and its state
 └── docs/
-    └── REVERSE_ENGINEERED_IDEATION.md   # the full Phase 0-5 record for the logistics run
+    ├── REVERSE_ENGINEERED_IDEATION.md   # the full Phase 0-5 record for the logistics run
+    └── EVIDENCE_LOG.md                  # test results — the only file holding facts
 ```
 
 Everything is Markdown. There is no build, no dependencies, and no toolchain — the only thing
@@ -90,10 +92,11 @@ the two falsification tests are at the end; the scoring table in Phase 3 is the 
 including the STOP result. The point of a pre-committed STOP is that it binds when the outcome
 is disappointing.
 
-**Recording what comes back:** every test result updates SCORE-TODAY, and only SCORE-TODAY.
-SCORE-IF-TRUE stays fixed unless the hypothesis itself changes. Log the raw outcome — the number
-of replies, the dollars found, the carrier's actual response — before logging any interpretation
-of it.
+**Recording what comes back:** log it in [`docs/EVIDENCE_LOG.md`](docs/EVIDENCE_LOG.md), which
+is the only file in the repo permitted to change SCORE-TODAY. Raw outcome first — the number of
+replies, the dollars found, the carrier's actual words — and interpretation second, marked as
+such. Log the silences too: 30 emails and 0 replies is a result about acquisition cost, not a
+missing entry.
 
 **Adding a new run:** a different founder profile means a new Phase 0 and a new document under
 `docs/`. Constraints are never edited to make a candidate work.
